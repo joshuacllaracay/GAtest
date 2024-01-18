@@ -14,6 +14,17 @@ function App() {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
+  const handleButtonClick = () => {
+    // Track the button click event
+    ReactGA.event({
+      category: 'User',
+      action: 'button click',
+    });
+
+    // Your button click logic here
+    setCount((count) => count + 1);
+  };
+
   return (
     <>
       <div>
@@ -26,7 +37,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={handleButtonClick}>
           count is {count}
         </button>
         <p>
