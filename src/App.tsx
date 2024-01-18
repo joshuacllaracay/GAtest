@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga4";
 import './App.css';
 
 
@@ -11,7 +11,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.send(window.location.pathname + window.location.search);
   }, []);
 
   const handleButtonClick = () => {

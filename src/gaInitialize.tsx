@@ -1,7 +1,7 @@
 // gaInitialize.ts
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
-const TRACKING_ID = 'G-VNEVLE7HS9'; // Replace with your actual tracking code
+const TRACKING_ID = 'G-VNEVLE7HS9';
 
 export function gaInitialize() {
   ReactGA.initialize(TRACKING_ID);
