@@ -18,7 +18,7 @@ function App() {
     // Track the button click event
     ReactGA.event({
       category: 'User',
-      action: 'button click',
+      action: 'button click count',
     });
 
     // Your button click logic here
