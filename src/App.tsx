@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import ReactGA from 'react-ga';
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const TRACKING_ID = "G-VNEVLE7HS9";
+  ReactGA.initialize(TRACKING_ID);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <>
