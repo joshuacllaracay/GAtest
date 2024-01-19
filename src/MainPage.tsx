@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import ReactGA from 'react-ga4'
+import { useEffect } from 'react';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -14,6 +15,10 @@ function MainPage() {
       action: 'User go Sign Up',
     });
   };
+
+  useEffect(() => {
+    ReactGA.send(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <>

@@ -1,6 +1,6 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ReactGA from 'react-ga4';
+import ReactGA from "react-ga4";
 
 interface FormData {
   email: string;
@@ -25,9 +25,13 @@ const SignUp = () => {
     navigate('/home');
     ReactGA.event({
       category: 'User',
-      action: 'Created an Account',
+      action: 'Created an Account'
     });
   };
+
+  useEffect(() => {
+    ReactGA.send(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <div>
