@@ -17,32 +17,34 @@ function MainPage() {
   };
 
   useEffect(() => {
-    ReactGA.send(window.location.pathname + window.location.search);
+    ReactGA.send("page_view_Main-page" + window.location.search);
   }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={handleLoginClick}>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <a href="https://vitejs.dev" target="_blank">
+        <img src={viteLogo} className="logo" alt="Vite logo" />
+      </a>
+      <a href="https://react.dev" target="_blank">
+        <img src={reactLogo} className="logo react" alt="React logo" />
+      </a>
+      <h1 className="text-3xl font-bold text-center mt-4">Vite + React</h1>
+      <h1>Google Analytics Test environment</h1>
+      <div className="card my-4 p-4 bg-white rounded-md shadow-md max-w-md">
+        <button
+          onClick={handleLoginClick}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
           Click to Log In
         </button>
-        <p>
+        <p className="text-gray-700 mt-2">
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
+      <p className="text-center text-gray-500">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+    </div>
   );
 }
 
