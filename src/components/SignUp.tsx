@@ -27,6 +27,7 @@ const SignUp = () => {
     ReactGA.event({
       category: 'User',
       action: 'Created an Account',
+      label: formData.email,
     });
   };
 
