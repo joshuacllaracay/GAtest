@@ -11,6 +11,7 @@ interface FormData {
 const SignUp = () => {
   const [formData, setFormData] = useState<FormData>({ email: '', password: '' });
   const navigate = useNavigate();
+  const userID = '1212121'
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -25,9 +26,8 @@ const SignUp = () => {
     console.log('Form data submitted:', formData);
     navigate('/home');
     ReactGA.event({
-      category: 'User',
-      action: 'Created an Account',
-      label: formData.email,
+      category: formData.email + '|' + userID,
+      action: 'stuck user',
     });
   };
 
