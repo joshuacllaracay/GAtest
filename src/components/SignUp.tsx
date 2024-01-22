@@ -26,8 +26,9 @@ const SignUp = () => {
     console.log('Form data submitted:', formData);
     navigate('/home');
     ReactGA.event({
-      category: formData.email + '|' + userID,
-      action: 'stuck user',
+      category: 'User',
+      action: 'User close Help Operation ',
+      label: userID,
     });
   };
 
