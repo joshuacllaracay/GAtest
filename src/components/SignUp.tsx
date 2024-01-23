@@ -27,7 +27,7 @@ const SignUp = () => {
     navigate('/home');
     ReactGA.event({
       category: 'User',
-      action: 'User:' + userID  +'close Help Operation Dialog',
+      action: 'User close Help Operation Dialog',
       label: userID,
     });
   };

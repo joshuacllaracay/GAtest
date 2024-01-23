@@ -1,4 +1,4 @@
-// useGoogleAnalytics.ts
+// useGoogleAnalytics.tsx
 import { useEffect } from 'react';
 import ReactGA from 'react-ga4';
 
