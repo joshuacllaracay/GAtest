@@ -7,7 +7,6 @@ import Home from './components/Home';
 import useGoogleAnalytics from './gaInitialize'; // Import the Hook
 
 const App: React.FC = () => {
-  // Initialize Google Analytics
   useGoogleAnalytics();
 
   return (

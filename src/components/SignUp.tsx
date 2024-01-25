@@ -11,7 +11,6 @@ interface FormData {
 const SignUp = () => {
   const [formData, setFormData] = useState<FormData>({ email: '', password: '' });
   const navigate = useNavigate();
-  const userID = '1234567'
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,8 +26,7 @@ const SignUp = () => {
     navigate('/home');
     ReactGA.event({
       category: 'User',
-      action: 'User close Help Operation Dialog',
-      label: userID,
+      action: 'User logged in',
     });
   };
 

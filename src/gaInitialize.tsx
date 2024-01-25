@@ -10,4 +10,12 @@ const useGoogleAnalytics = () => {
   }, []);
 };
 
+export const gaCustomEventTracking = (category: string, action: string) => {
+  ReactGA.event({
+    category,
+    action,
+  });
+};
+
+
 export default useGoogleAnalytics;
