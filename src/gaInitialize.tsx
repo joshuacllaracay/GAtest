@@ -10,7 +10,9 @@ const useGoogleAnalytics = () => {
   }, []);
 };
 
-export const gaCustomEventTracking = (category: string, action: string) => {
+export const gaCustomEventTracking = (category: string, customAction: string) => {
+  const screenName = window.location.pathname;
+  const action = `${screenName} - ${customAction}`;
   ReactGA.event({
     category,
     action,
